@@ -1,0 +1,33 @@
+Things I need to do for my portfolio:
+
+Gallery/Works page
+    - needs to be grid
+    - needs to showcase recent work
+    - full width
+Home page
+    - needs to have a call to action button - contact, quote, pricing, etc.
+    - needs to give a reason to call me
+    - hero image?
+    - how much text?
+    - recent work?
+    - full page?
+    - nav menu with header social icons
+    - full width
+Contact page
+    - needs to have contact information 
+    - needs to have a form
+    - two column
+About page
+    - needs to have a description about the company
+    - needs to have a picture of me
+    - full width or have a sidebar?
+Prices page
+    - downloadable PDF?
+    - packages listed first; bootstrap card-like?
+
+
+Images 
+    - need to be the same size
+    - decide whether they're 2D or 3D
+    - create images with mockups for paperbacks and ereaders
+    - 

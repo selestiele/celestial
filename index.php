@@ -1,8 +1,21 @@
 <?php
+get_header();
+?>
+<main>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+      <article>
+            <?php 
+            if (have_posts()) :
+                  while (have_posts()) :
+                        get_the_title();                  
+                        the_post();
+                        the_content();
+                  endwhile;
+            endif;  ?>
+      </article>
+        
+</main>
+<?php
+get_footer(); 
 
+?>

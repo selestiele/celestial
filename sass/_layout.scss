@@ -1,10 +1,228 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Apr 6, 2018, 10:46:45 AM
-    Author     : Liz
-*/
+/* Normalize */
+@import '_normalize.scss';
+
+// Import variables
+@import '_variables.scss';
+@import '_mixins.scss';
+
+/* General Styles */
+
+html {
+    background-color: $lightgray;
+}
+
+body {
+    color: $darkteal;
+    font-family: $main;
+    position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $main;
+    text-transform: uppercase;
+    font-weight: light;
+    margin: 1em 0;
+    padding: .5em;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.75em;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+h5 {
+    font-size: 1.25em;
+}
+
+h6 {
+    font-size: .75em;
+}
+
+p {
+    font-size: 1em;
+}
+
+.sr-only {
+    display: none;
+}
+
+/* Navigation */
+#menuToggle {
+        display: none;
+    }
+    
+.small-menu {
+   display: block;
+   
+   .social-nav {
+       display: none;
+   }
+}
+
+@media screen and (min-width: 800px) {
+    .small-menu {
+        .social-nav {
+            display: inline;
+        }
+    }
+    
+}
+
+
+/* Header for all pages except Home */
+.general-header {
+    width: 80%;
+    margin: 1em auto;
+    text-align: center;
+    background-color: $darkteal;
+    color: $lightgray;
+    
+    li {
+        text-transform: uppercase;
+        font-size: 1.5em;
+        padding: .25em;
+        margin: .25em;
+        border-bottom: 1px solid $lightgray;
+        list-style-type: none;
+        
+        &::last-child {
+            border-bottom: none;
+        }
+        
+        a {
+            color: $lightgray;
+            text-decoration: none;
+            
+            &:hover {
+                color: $lightteal;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .generalBody {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: 
+            "header other"
+            "header other"
+            "header other"
+            "footer footer";
+    }
+    .general-header {
+        grid-area: header;
+        background-color: $lightgray;
+        color: $darkteal;
+        
+        li {
+            border-bottom: none;
+            
+            a {
+                color: $darkteal;
+            }
+        }
+    } 
+    
+    
+    
+    footer {
+        grid-area: footer;
+    }
+}
+
+
+
+
+
+/* Homepage styles */
+@import '_homepage.scss';
+
+
+/* Gallery Styles */
+@import '_gallery.scss';
+
+/* Pricing Page Styles */
+@import '_pricing.scss';
+
+/* Footer */
+footer {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: .75em;
+}
+.footer-nav {
+    border-top: 1px solid $darkteal;
+    border-bottom: 1px solid $darkteal;
+    padding: .5em;
+    
+    li {
+        display: inline;
+        margin: 0 .5em;
+        padding: .25em;
+        
+        a {
+            text-decoration: none;
+            color: $darkteal;
+            
+            &:hover {
+                color: $lightteal;
+                border-bottom: 1px dotted $lightteal;
+            }
+            
+            &:active {
+                border-bottom: 1px solid $darkteal;
+            }
+        }
+    }
+}
+
+.footer-social {
+    border-bottom: 1px solid $darkteal;
+    padding: .5em;
+    
+    li {
+        display: inline;
+        margin: 0 .5em;
+        padding: .25em;
+        list-style-type: none;
+          
+        a {
+            text-decoration: none;
+            color: $darkteal;
+            font-size: 1em;
+            
+            &:hover {
+                color: $lightteal;
+                border-bottom: 1px dotted $lightteal;
+            }
+            
+            &::before {
+                font-family: $icons;
+                font-size: 2em;
+                color: $darkteal;
+                display: inline-block;
+                font-style: normal;
+                font-variant: normal;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+            }
+            
+            @include socialIcons;
+        }
+    }
+}
+
 

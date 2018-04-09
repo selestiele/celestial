@@ -1,0 +1,60 @@
+// Homepage settings
+
+#homepageBody {
+    background: url('images/nebula.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    color: $lightgray;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#homepageHeader {
+    .main-nav-home {
+        text-align: right;
+
+        li {
+            display: inline;
+            padding: .5em;
+            margin: .5em;
+            font-family: $main;
+            font-size: 1.5em;
+
+            a {
+                text-transform: uppercase;
+                color: $lightgray;
+                text-decoration: none;
+
+                &:active {
+                    border-bottom: 1px solid $lightgray;
+                }
+
+                &:hover {
+                    color: $lightteal;
+                }
+            }
+        }
+    }
+}
+
+#homepageLogo {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    
+}
+
+#homepageTitle,
+#homepageDescription {
+    display: block;
+    width: 95%;
+    margin: 0 auto;
+}
+
+
+

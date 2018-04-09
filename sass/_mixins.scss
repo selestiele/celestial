@@ -1,10 +1,35 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Apr 6, 2018, 10:46:40 AM
-    Author     : Liz
-*/
+//mixins for social icons
 
+@mixin socialIcons {
+        
+            &[href*="wordpress.org"]::before,
+            &[href*="wordpress.com"]::before {
+            content: $wordpress;
+            }
+        
+            &[href*="facebook.com"]::before {
+                content: $facebook;
+            }
+            &[href*="twitter.com"]::before {
+                content: $twitter;
+            }
+            &[href*="instagram.com"]::before {
+                content: $instagram;
+            }
+            &[href*="amazon.com"]::before {
+                content: $amazon;
+            }
+            &[href*="linkedin.com"]::before {
+                content: $linkedin;
+            }
+            &[href*="deviantart.com"]::before {
+                content: $deviantart;
+            }
+/*            &[href*="linkedin.com"]::before {
+                content: $linkedin;
+            }
+            &[href*="linkedin.com"]::before {
+                content: $linkedin;
+            }*/
+            
+}

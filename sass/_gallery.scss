@@ -1,0 +1,63 @@
+// Gallery Styles
+
+.gallery-content {
+    width: 90%;
+    
+    .gallery-item {
+        margin: .25em;  
+    }
+    
+}
+
+
+    @media screen and (min-width: 800px) {
+        /* Gallery Page */
+        .gallery-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+/*            grid-template-areas: 
+                    "1 1 2 3 4"
+                    "1 1 5 9 9"
+                    "6 7 8 9 9";*/
+        }
+        
+        #item-1 {
+            grid-area: 1 / 1 / 3 / 3;
+            background-color: red;
+        }
+        
+        #item-2 {
+            grid-area: 3/1/4/2;
+                
+        }
+        
+        #item-3 {
+            grid-area: 4/1/5/2;
+        }
+        
+        #item-4 {
+            grid-area: 5/1/6/2;
+        }
+        
+        #item-5 {
+            grid-area: 3/2/4/3;
+        }
+        
+        #item-6 {
+            grid-area: 1/3/2/4;
+        }
+        
+        #item-7 {
+            grid-area: 2/3/3/4;
+        }
+        
+        #item-8 {
+            grid-area: 3/3/4/4;
+        }
+        
+        #item-9 {
+            grid-area: 4/2/6/4;
+        }
+    } // end media query
+
