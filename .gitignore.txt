@@ -1,5 +1,5 @@
-fonts/
-.sass-cache/
+fonts/**
+.sass-cache/**
 images/
 style.css.map
 newfile.txt

@@ -11,6 +11,12 @@ html {
     background-color: $lightgray;
 }
 
+@media screen and (min-width: 1400px) {
+    html {
+        font-size: 22px;
+    }
+}
+
 body {
     color: $darkteal;
     font-family: $main;
@@ -57,6 +63,32 @@ p {
     display: none;
 }
 
+/* Image alignment and text wrapping */
+img.alignright {
+    float:right; 
+    margin:1em 0 1em 1em;
+}
+img.alignleft {
+    float:left; 
+    margin:1em 1em 1em 0;
+}
+img.aligncenter {
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+.alignright {
+    float:right; 
+}
+.alignleft {
+    float:left; 
+}
+.aligncenter {
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
 /* Navigation */
 #menuToggle {
         display: none;
@@ -70,23 +102,18 @@ p {
    }
 }
 
-@media screen and (min-width: 800px) {
-    .small-menu {
-        .social-nav {
-            display: inline;
-        }
-    }
-    
-}
-
-
-/* Header for all pages except Home */
-.general-header {
+#main-nav {
     width: 80%;
-    margin: 1em auto;
     text-align: center;
     background-color: $darkteal;
     color: $lightgray;
+    padding: .5em 1em;
+    //position: fixed;
+    bottom: 0;
+    right: 1em;
+    z-index: 1;
+    margin: 0 auto 1em;
+    
     
     li {
         text-transform: uppercase;
@@ -96,7 +123,7 @@ p {
         border-bottom: 1px solid $lightgray;
         list-style-type: none;
         
-        &::last-child {
+        &:last-child {
             border-bottom: none;
         }
         
@@ -112,6 +139,30 @@ p {
 }
 
 @media screen and (min-width: 800px) {
+    .small-menu {
+        .social-nav {
+            display: inline;
+        }
+    }
+}
+
+
+/* Header for all pages except Home */
+.general-header {
+    
+    #logo-teal-header {
+        background-image: url('images/logo-teal.png');
+        background-repeat: no-repeat;
+        background-position: left; 
+        background-size: contain;
+        height: 75px;
+    }
+    
+}
+
+/* media query for menu grid styles */
+
+@media screen and (min-width: 800px) {
     .generalBody {
         display: grid;
         grid-template-columns: 1fr 2fr;
@@ -121,7 +172,18 @@ p {
             "header other"
             "footer footer";
     }
+    
     .general-header {
+        position: relative;
+        
+        #logo-teal-header {
+            background-position: center;
+            height: 150px; 
+        }
+    }
+    
+    .general-header,
+    #navMenus {
         grid-area: header;
         background-color: $lightgray;
         color: $darkteal;
@@ -133,40 +195,136 @@ p {
                 color: $darkteal;
             }
         }
-    } 
+    }
     
+    #main-nav {
+        width: 100%;
+        background-color: $lightgray;
+        color: $darkteal;
+        padding: .5em 1em;
+        
+        ul {
+            text-align: center;
+        }     
+
+        li {
+            border-bottom: none;
+            
+            a {
+                color: $darkteal;
+                
+                &:hover {
+                    color: $lightteal;
+                }
+            }
+        }
+    }
     
+    #social {
+        padding: 0 1em;
+    }
+    
+    .social-nav {
+        display: block;
+        color: $darkteal;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;        
+        
+        li {
+            display: inline;
+            margin: 0 .5em;
+            padding: .25em;
+            list-style-type: none;
+
+            a {
+                text-decoration: none;
+                color: $darkteal;
+                font-size: 1em;
+
+                &:hover {
+                    color: $lightteal;
+                    border-bottom: 1px dotted $lightteal;
+                }
+
+                &::before {
+                    font-family: $icons;
+                    font-size: 2em;
+                    color: $darkteal;
+                    display: inline-block;
+                    font-style: normal;
+                    font-variant: normal;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                }
+
+                @include socialIcons;
+            }
+        }
+    }
     
     footer {
         grid-area: footer;
+    }
+} // end of media query for 800px
+
+
+/* Default Page Template Styles */
+#gen-page {
+    width: 100%;
+    text-align: left;
+    margin: 0;
+}
+
+.pageTitle {
+    text-align: right;
+    font-weight: 200;
+    font-family: $main;
+    color: $darkteal;
+    margin: 1em 0 0;
+    padding: .5em 0;
+}
+
+#primary {
+    padding: 0 1em;
+    max-width: 850px;
+}
+
+/* featured images on default pages */
+.featured {
+    img {
+        width: 110%;
+        height: auto;
+        margin: 0 -.5em;
     }
 }
 
 
 
-
-
-/* Homepage styles */
+/* Homepage Styles */
 @import '_homepage.scss';
 
-
-/* Gallery Styles */
+/* Gallery Page Template Styles */
 @import '_gallery.scss';
 
-/* Pricing Page Styles */
+/* Pricing Page Template Styles */
 @import '_pricing.scss';
 
 /* Footer */
 footer {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    margin: 5em auto 0;
     text-align: center;
     font-size: .75em;
 }
 .footer-nav {
     border-top: 1px solid $darkteal;
-    border-bottom: 1px solid $darkteal;
-    padding: .5em;
+    padding: .25em;
+    
+    ul {
+        margin: .5em 0 0;
+        padding: 0;
+    }
     
     li {
         display: inline;
@@ -191,7 +349,12 @@ footer {
 
 .footer-social {
     border-bottom: 1px solid $darkteal;
-    padding: .5em;
+    padding: .25em;
+    
+    ul {
+        margin: 0 0 .25em;
+        padding: 0;
+    }
     
     li {
         display: inline;
@@ -202,7 +365,7 @@ footer {
         a {
             text-decoration: none;
             color: $darkteal;
-            font-size: 1em;
+            font-size: .75em;
             
             &:hover {
                 color: $lightteal;

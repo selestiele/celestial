@@ -9,6 +9,7 @@
     
     
         <?php wp_nav_menu( array(
+            'theme_location' => 'social',
             'menu' => 'social',
             'container' => 'nav',
             'container_class' => 'footer-social',

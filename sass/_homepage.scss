@@ -1,17 +1,21 @@
 // Homepage settings
 
-#homepageBody {
-    background: url('images/nebula.jpg');
+.homepageBody {
+    background-image: url('images/nebula.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
     color: $lightgray;
+    margin: 0;
+    padding: 1em;
+    height: 100vh;
 }
 
 main {
     width: 80%;
     margin: 0 auto;
+    text-align: center;
 }
 
 #homepageHeader {
@@ -44,8 +48,9 @@ main {
 
 #homepageLogo {
     text-align: center;
-    width: 50%;
-    margin: 0 auto;
+    max-width: 50%;
+    margin: 5em auto 0;
+    height: 10em;
     
 }
 
@@ -54,6 +59,10 @@ main {
     display: block;
     width: 95%;
     margin: 0 auto;
+}
+
+#homepageTitle {
+    max-height: 100px;
 }
 
 
